@@ -73,4 +73,4 @@ let spike_count = lsm.get_spike_count();
 
 ## License
 
-MIT License
+Dual licensed under MIT OR AGPL-3.0-or-later. See [LICENSE-MIT](LICENSE-MIT) and [LICENSE.txt](LICENSE.txt).

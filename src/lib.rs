@@ -5,11 +5,12 @@
 //! This serves as the first reservoir in our neurosymbolic pipeline,
 //! processing temporal sensor data with spike-timing dynamics.
 
-use ndarray::{Array1, Array2, Array3, Axis};
+use ndarray::{Array1, Array2, Axis};
 use ndarray_rand::RandomExt;
 use rand::distributions::{Bernoulli, Uniform};
 use rand::Rng;
 use rand_distr::Normal;
+#[allow(unused_imports)]
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::collections::VecDeque;
@@ -282,7 +283,7 @@ impl LiquidStateMachine {
 
     /// Perform one simulation step
     pub fn step(&mut self, input: &Array1<f32>) -> Array1<f32> {
-        let n = self.neurons.len();
+        let _n = self.neurons.len();
         let dt = self.config.dt;
 
         // Check input dimension
@@ -300,7 +301,7 @@ impl LiquidStateMachine {
 
         // Get previous spike indicators for recurrent input
         let spike_indicators: Array1<f32> = Array1::from_iter(
-            self.neurons.iter().map(|n| {
+            self.neurons.iter().map(|_| {
                 if let Some(&last_spike) = self.spike_history[0].back() {
                     if self.current_time - last_spike < dt as f64 { 1.0 } else { 0.0 }
                 } else {
@@ -454,6 +455,7 @@ impl LiquidStateMachine {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[allow(unused_imports)]
     use approx::assert_relative_eq;
 
     #[test]
