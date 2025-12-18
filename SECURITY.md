@@ -2,20 +2,45 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 0.1.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability in LSM, please report it responsibly:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. **Do not** open a public GitHub issue for security vulnerabilities
+2. Email the maintainer at `hyperpolymath@protonmail.com` with:
+   - Description of the vulnerability
+   - Steps to reproduce
+   - Potential impact assessment
+   - Any suggested fixes (optional)
+
+**Response Timeline:**
+- Initial response: within 48 hours
+- Status update: within 7 days
+- Resolution target: within 30 days for critical issues
+
+## Security Measures
+
+This project follows RSR (Rhodium Standard Repositories) security guidelines:
+
+- SHA-pinned GitHub Actions to prevent supply chain attacks
+- CodeQL and OSSF Scorecard security scanning
+- Dependency auditing via `cargo audit`
+- No hardcoded secrets (environment variables only)
+- HTTPS-only for all external resources
+- SHA256+ for any cryptographic operations (no MD5/SHA1)
+
+## Scope
+
+The following are in scope for security reports:
+- Remote code execution vulnerabilities
+- Memory safety issues in the Rust code
+- Dependency vulnerabilities
+- CI/CD pipeline security issues
+
+Out of scope:
+- Denial of service through excessive resource usage
+- Issues in development dependencies only
