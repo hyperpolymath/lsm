@@ -1,0 +1,25 @@
+= LSM (Liquid State Machines)
+:toc: auto
+
+A Rust implementation of Liquid State Machines (spiking neural network reservoirs) for temporal pattern recognition.
+
+== Overview
+
+LSM implements reservoir computing using spiking neural networks for processing temporal/sequential data.
+
+== Features
+
+* Spiking neural network reservoirs
+* Temporal pattern recognition
+* Rust performance
+
+== Installation
+
+[source,bash]
+----
+cargo add lsm
+----
+
+== License
+
+AGPL-3.0-or-later
